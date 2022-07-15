@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>17 pesos</title>
+        <link rel="icon" href="mon.png">
+    </head>
+
+    <body id="Contact">
+      <script>
+        function show() {
+          alert("Thank You!")
+        }
+      </script>
+            <nav>
+                <a class="one" href="./index.html" style="color:#763321">-Home-</a>
+                <a class="one" href="./travel.html" style="color:#763321">-Travel-</a>
+                <a class="one" href="./contact.html" style="color: #F8BD8D">-Contact-</a>
+                <a class="one" href="./music.html" style="color:#763321">-Music-</a>
+            </nav>
+                <a class="left4" href="./travel.html"> &#8592; Travel</a>
+                <a class="right4" href="./music.html"> Music &#8594; </a>
+                <h1 style="text-align: center; margin: 50px 0 80px 0">Send a message</h1>
+
+                <div class="container" id="send">
+                    <form target="_blank" style="width: 50%; margin: 0 150px 0 0;" action="https://formsubmit.co/javier.nikolskiy@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                      <div class="form-group">
+                        <div class="form-row">
+                          <div class="col">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required> <br>
+                          </div>
+                          <div class="col">
+                            <input type="email" name="email" class="form-control" placeholder="Email Address (optional)"> <br>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea><br>
+                      </div>
+                      <button type="submit" class="btn btn-lg btn-dark btn-block" onclick="show()">Send</button>
+                    </form>
+                  </div>
+
+    </body>
+</html>
