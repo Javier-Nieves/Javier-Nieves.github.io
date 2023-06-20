@@ -1,0 +1,441 @@
+body {
+  margin: 0;
+  background-color: rgba(42, 42, 42, 0.98);
+}
+.shadow-border {
+  box-shadow: 0px 10px 18px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.main-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-image: url("22.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.CV-background {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  height: 139.5vh;
+  background-image: url("11.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  justify-content: flex-start;
+  margin: 15px 0 0 0;
+  padding: 0;
+  color: #F7F6F4;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 8.5vh;
+  font-weight: 800;
+}
+h2 {
+  font-size: 4vh;
+  margin: -5px 0 2vh 0;
+  font-family: 'News Cycle', sans-serif;
+  color: #F7F6F4;
+  transition: all 0.5s ease-in-out;
+}
+h2.main{
+  font-size: 3.5vh;
+}
+a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container {
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+}
+.flex-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  margin-top: 20vh;
+}
+.left-column, .right-column {
+  flex-direction: column;
+}
+.left-column {
+  position: fixed;
+  width: 45vw;
+  padding-left: 5vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.right-column {
+  flex: 1;
+  overflow-y: scroll;
+  margin-left: 45vw;
+  margin-top: -50px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* git link */
+.social-links {
+  display: flex;
+  gap: 4vw;
+  position: absolute;
+  bottom: 10vh;
+  left: 8vw;
+}
+.social-links > *:hover{
+  text-decoration: underline;
+}
+.svg-git {
+  fill: white;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+.svg-CV {
+  fill: white;
+  width: 9vw;
+  height: 9vw;
+}
+.text-small {
+  font-size: 2.5vh;
+  color: black;
+}
+.link-text {
+  color: white;
+  font-size: 2.5vh;
+}
+
+/* btns */
+.CV-btn {
+  margin-left: 15vw;
+  margin-top: 23vh;
+  display: flex;
+  align-items: center;
+  width: 10vw;
+  height: 8vw;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.CV-btn:hover {
+  text-decoration: none;
+  /* background-image: url("cv.jpg"); */
+  background-color: rgba(0, 0, 0, 0.202);
+  cursor: pointer;
+}
+.CV-text {
+  color: white;
+  font-size: 5vh;
+}
+
+/* Views */
+/* Main */
+
+#main-background {
+  transition: transform 0.5s, opacity 0.5s;
+}
+#main-container {
+  transition: transform 0.5s, opacity 0.5s;
+}
+.go {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* CV */
+.cv-left-part, .cv-right-part {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1vh;
+margin-top: 1vh;
+}
+.cv-right-part {
+flex: 1;
+}
+.cv-right-part > * {
+  width: 62vw;
+}
+.cv-left-part > * {
+  margin-left: 0.5vw;
+  width: 33vw;
+}
+#CV-view {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 120vh;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translate3d(0, 0, 0);
+  perspective: 1px;
+}
+
+.cv-block {
+  background-color: rgba(42, 42, 42, 0.98);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cv-block > * {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.bio-text, .job-block > *  {
+  /* padding: 15px; */
+  font-size: 2.5vh;
+  font-family: 'News Cycle', sans-serif;
+  color: rgb(255, 238, 218);
+}
+.job-block, .uni-block {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  color: rgb(255, 238, 218);
+}
+.job-block {
+  padding: 2vh;
+  margin: 2vh 1vw 2vh 1vw;
+  border: 1px solid rgb(255, 238, 218);
+  border-radius: 10px;
+}
+.uni-block {
+  text-align: center;
+  margin: 0.5vh 0 2vh 0;
+}
+.uni-block > * {
+  font-size: 2.4vh;
+}
+.course {
+  font-weight: 700;
+}
+.cv-heading {
+  color: rgb(249, 199, 128);
+  margin-bottom: 0;
+}
+h1.cv-heading {
+  margin-top: -1vh;
+}
+h2.cv-heading {
+  font-size: 4.5vh;
+}
+h3.cv-heading {
+  color: bisque;
+  font-size: 3vh;
+}
+.job-position {
+  font-size: 3vh;
+  font-weight: 700;
+}
+#container-diploma {
+  margin-bottom: 3vh;
+}
+.cv-diploma{
+  width: 15vw;
+}
+.cv-diploma:hover {
+  cursor: pointer;
+}
+.back-arrow {
+  padding: 3vh;
+  width: 10vw;
+  height: 10vw;
+  fill: rgb(249, 199, 128);
+  transition: all 0.5s ease-in-out;
+}
+.back-arrow:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 0 3px white;
+}
+.appear1, .appear2, .appear3, .appear4, .appear5 {
+  height: auto;
+  transition: all 1.2s;
+  padding: 0;
+  opacity: 0;
+  transform:translateY(100px);
+}
+.visible-cv {
+  opacity: 1;
+  transform:translateY(0px);
+  padding: 10px;
+}
+/* projects */
+.right-column {
+  overflow: visible;
+}
+.flex-column-container {
+  overflow: visible;
+}
+.project-card {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(15, 14, 3, 0.75);
+  border: 1px solid gray;
+  color: black;
+  width: 40vw;
+  height: 20vh;
+  transition: all 0.5s;
+  transform-origin: center;
+}
+.active {
+  margin-left: -45vw;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: scale(1);
+  background-color: rgb(15, 14, 3);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.active.stocks {
+  background-image: url("33.jpg");
+}
+.active.books{
+  background-image: url("14.jpg");
+}
+.project-btn {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.small-text, .medium-text {
+  font-size: 1.5vh;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+.medium-text {
+  font-size: 2vh;
+}
+.project-card:hover {
+  cursor: pointer;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.6);
+}
+.active:hover {
+  cursor:default;
+}
+#projects-view {
+  display: none;
+}
+
+.projectVideo {
+  width: 50vw;
+  height: 50vh;
+  margin-top: 5vh;
+  transition: all 0.5s ease-in-out;
+}
+.projectText {
+  transition: all 1s ease-in-out;
+}
+.projectTitle {
+  font-size: 10vh;
+  margin: -3vh 0 0 0;
+  padding: 0;
+}
+.projectLink {
+  width: 25vw;
+  padding: 15px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  margin-top: 10vh;
+}
+.projectLink.stocks {
+  background-color: rgba(7, 9, 22, 0.95);
+}
+.projectLink.books {
+  background-color: rgba(143, 25, 1, 0.7);
+}
+.linkContainer {
+  height: 0px;
+}
+.CardContent {
+  width: 40vw;
+  height: 0px;
+  display: none;
+  opacity: 0;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 5vw;
+  transition: all 1s ease-in-out;
+}
+.visible {
+  opacity: 1;
+}
+.svg-project {
+  fill: white;
+  width: 5vw;
+  height: 5vw;
+}
+h2.books, .small-text.books, .medium-text.books {
+  color: #8f1901;
+}
+h2.books {
+  font-family: 'Tangerine', cursive;
+  font-size: 15vh;
+  font-weight: 700;
+  margin: 2vh 0 2vh 0;
+}
+.text1 {
+  font-size: 3vh;
+  margin: 0;
+}
+.text3 {
+  font-size: 6vh;
+}
+.text4{
+  font-size: 4vh;
+  margin: 0;
+}
+.projectLink:hover {
+  animation: shimmer 1s infinite alternate;
+}
+@keyframes shimmer {
+  1%, 18%, 22%, 25%, 53%, 57%, 99% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 13px #fff,
+      0 0 30px rgba(255, 247, 0, 0.862),
+      0 0 50px rgb(193, 207, 0);
+    box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 35px rgba(242, 255, 0, 0.2)
+  }
+  0%, 20%, 24%, 55%, 100% {       
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
