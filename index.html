@@ -129,9 +129,12 @@
                             <div class="uni">Harvard University</div>
                         </div>
                         <div id='container-diploma' class="flex" style="gap:0.5vw">
-                            <img class="cv-diploma" src="CS50x.png" alt="CS50x diploma">
-                            <img class="cv-diploma" src="CS50w.png" alt="CS50w diploma">
+                            <img class="cv-diploma" src="CS50x.png" alt="CS50x diploma" data-diploma="CS50x.png">
+                            <img class="cv-diploma" src="CS50w.png" alt="CS50w diploma" data-diploma="CS50w.png">
                         </div>
+                        <dialog id="diplomaModal" class="flex">
+                            <img class="modal-img" onclick="diplomaModal.close()">
+                        </dialog>
                         <div class="uni-block">
                             <div class="job-year">2006 - 2012</div>
                             <div class="course">Master of Physics</div>
@@ -141,9 +144,18 @@
 
                     <article class="cv-block appear3">
                         <h2 class="cv-heading">Languages</h2>
-                        <h3 class="cv-heading">Russian (native)</h3>
-                        <h3 class="cv-heading">English (advanced)</h3>
-                        <h3 class="cv-heading">Spanish (advanced)</h3>
+                        <div class="lang-line">
+                            <img src="ru.png" class="small-flag">
+                            <h3 class="cv-heading">Russian (native)</h3>
+                        </div>
+                        <div class="lang-line">
+                            <img src="gb.png" class="small-flag">
+                            <h3 class="cv-heading">English (advanced)</h3>
+                        </div>
+                        <div class="lang-line">
+                            <img src="es.png" class="small-flag">
+                            <h3 class="cv-heading">Spanish (advanced)</h3>
+                        </div>
                     </article>
                     
                 </div>
@@ -171,7 +183,7 @@
                         </article>
                         <article class="job-block">
                             <div class="job-year">2016 - current</div>
-                            <div class="job-company">self-employed</div>
+                            <!-- <div class="job-company">self-employed</div> -->
                             <div class="job-position">Computer Science, Math and Physics tutor</div>
                             <div class="job-desc">Teaching all kinds of students, from problematic to 
                                 gifted. Developing engaging lesson plans and promoting critical thinking skills.</div>

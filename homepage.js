@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const imgs = document.querySelectorAll(".cv-diploma");
+  imgs.forEach((img) => {
+    img.addEventListener("click", () => {
+      const which = img.dataset.diploma;
+      showDiploma(which);
+    });
+  });
+
   window.addEventListener("scroll", handleScroll);
 });
 
@@ -110,19 +118,19 @@ function appearAnimation(showing) {
     const appear5 = document.querySelector(".appear5");
     setTimeout(() => {
       appear2.classList.add("visible-cv");
-    }, 1000);
+    }, 800);
     setTimeout(() => {
       appear1.classList.add("visible-cv");
-    }, 1500);
+    }, 1000);
     setTimeout(() => {
       appear3.classList.add("visible-cv");
-    }, 2000);
+    }, 1500);
     setTimeout(() => {
       appear4.classList.add("visible-cv");
-    }, 2300);
+    }, 2000);
     setTimeout(() => {
       appear5.classList.add("visible-cv");
-    }, 2600);
+    }, 2400);
   } else {
     const cvBlocks = document.querySelectorAll(".visible-cv");
     cvBlocks.forEach((block) => {
@@ -132,7 +140,6 @@ function appearAnimation(showing) {
 }
 
 function handleScroll() {
-  console.log("handleobject");
   const backGro = document.querySelector(".CV-background");
   const leftColumn = document.querySelector(".cv-left-part");
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -143,4 +150,14 @@ function handleScroll() {
   const tranValueLeft = `translateY(${scrollTop * scrollLeft}px)`;
   backGro.style.transform = tranValueBack;
   leftColumn.style.transform = tranValueLeft;
+}
+
+function showDiploma(which) {
+  const dialog = document.querySelector("#diplomaModal");
+  dialog.showModal();
+  const img = document.querySelector(".modal-img");
+  img.src = `${which}`;
+  dialog.addEventListener("click", () => {
+    dialog.close();
+  });
 }

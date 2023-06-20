@@ -254,6 +254,7 @@ h2.cv-heading {
   font-size: 4.5vh;
 }
 h3.cv-heading {
+  margin: 0;
   color: bisque;
   font-size: 3vh;
 }
@@ -351,7 +352,15 @@ h3.cv-heading {
 #projects-view {
   display: none;
 }
-
+.lang-line {
+  margin: 1vh 0 1vh 0;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.small-flag {
+  width: 2vw;
+}
 .projectVideo {
   width: 50vw;
   height: 50vh;
@@ -438,4 +447,25 @@ h2.books {
     text-shadow: none;
     box-shadow: none;
   }
+}
+
+dialog {
+  position: fixed;
+  opacity: 0;
+  scale: 0;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  transition: all 0.5s;
+}
+dialog[open] {
+  opacity: 1;
+  scale: 1;
+}
+dialog::backdrop {
+  background-color: #30210a6f;
+}
+
+.modal-img {
+  width: 50vw;
 }
