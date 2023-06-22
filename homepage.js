@@ -111,26 +111,14 @@ function animateCard(projectCard) {
 
 function appearAnimation(showing) {
   if (showing) {
-    const appear1 = document.querySelector(".appear1");
-    const appear2 = document.querySelector(".appear2");
-    const appear3 = document.querySelector(".appear3");
-    const appear4 = document.querySelector(".appear4");
-    const appear5 = document.querySelector(".appear5");
-    setTimeout(() => {
-      appear2.classList.add("visible-cv");
-    }, 800);
-    setTimeout(() => {
-      appear1.classList.add("visible-cv");
-    }, 1000);
-    setTimeout(() => {
-      appear3.classList.add("visible-cv");
-    }, 1500);
-    setTimeout(() => {
-      appear4.classList.add("visible-cv");
-    }, 2000);
-    setTimeout(() => {
-      appear5.classList.add("visible-cv");
-    }, 2400);
+    let timer = 600;
+    for (let i = 1; i <= 5; i++) {
+      const block = document.querySelector(`.appear${i}`);
+      setTimeout(() => {
+        block.classList.add("visible-cv");
+      }, timer);
+      timer += 300;
+    }
   } else {
     const cvBlocks = document.querySelectorAll(".visible-cv");
     cvBlocks.forEach((block) => {
