@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".CV-btn").onclick = () => {
     showView("CV");
@@ -9,9 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const cards = document.querySelectorAll(".project-card");
+  let isThrottled;
   cards.forEach((card) => {
     card.addEventListener("click", function () {
       showProject(this);
+      isThrottled = true;
+      setTimeout(function () {
+        isThrottled = false;
+      }, 700);
     });
   });
 
@@ -57,12 +63,13 @@ function showView(name) {
 
 function showProject(projectCard) {
   let isActive = animateCard(projectCard);
-  const line2 = projectCard.querySelector("h2");
+  const line2 = projectCard.querySelector(".big-text");
   const line1 = projectCard.querySelector(".small-text");
   const line4 = projectCard.querySelector(".medium-text");
   const content = projectCard.querySelector(".CardContent");
   const linkContainer = projectCard.querySelector(".linkContainer");
   const marker = projectCard.querySelector(".flex-column").dataset.name;
+  const links = document.querySelectorAll("a");
   let adition;
   switch (marker) {
     case "Wave Bookclub":
@@ -71,23 +78,39 @@ function showProject(projectCard) {
     case "Stock Sprout":
       adition = "stocks";
       break;
+    case "Trilingua":
+      adition = "trilingua";
+      break;
   }
   if (isActive) {
+    document.querySelector("body").style.overflow = "hidden";
     line1.classList.add("text1", `${adition}`);
     line2.classList.add("projectTitle", `${adition}`);
     line4.classList.add("text4", `${adition}`);
     setTimeout(() => {
       content.style.display = "flex";
-      linkContainer.style.height = content.clientHeight === 0 ? "55vh" : "0px";
-      content.style.height = content.clientHeight === 0 ? "55vh" : "0px";
+      linkContainer.style.height = content.clientHeight === 0 ? "50vh" : "0px";
+      content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
       content.classList.add("visible");
     }, 500);
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        projectCard.querySelector(".projectText").style.display = "none";
+        projectCard.querySelector(".spinner").style.display = "flex";
+        // const cards = document.querySelectorAll(".project-card");
+        // cards.forEach((card) => {
+        //   card.classList.remove("project-card");
+        // });
+      });
+    });
   } else {
+    document.querySelector("body").style.overflow = "scroll";
     line1.classList.remove("text1", `${adition}`);
     line2.classList.remove("projectTitle", `${adition}`);
     line4.classList.remove("text4", `${adition}`);
-    linkContainer.style.height = content.clientHeight === 0 ? "55vh" : "0px";
-    content.style.height = content.clientHeight === 0 ? "55vh" : "0px";
+    linkContainer.style.height = content.clientHeight === 0 ? "50vh" : "0px";
+    content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
     content.classList.remove("visible");
     content.style.display = "none";
   }
