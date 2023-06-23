@@ -524,3 +524,7 @@ dialog::backdrop {
 .spinner {
   display: none;
 }
+.spinner  > h2 {
+  font-size: 7vh;
+  margin-right: 1vw;
+}

@@ -101,9 +101,8 @@ function showProject(projectCard) {
     }, 500);
 
     links.forEach((link) => {
-      link.addEventListener("click", (event) => {
+      link.addEventListener("click", () => {
         console.log(link, "is clicked");
-        event.preventDefault();
         projectCard.querySelector(".projectText").style.display = "none";
         projectCard.querySelector(".spinner").style.display = "flex";
         goingAway = true;
