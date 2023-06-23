@@ -1,4 +1,5 @@
 "use strict";
+let goingAway;
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".CV-btn").onclick = () => {
     showView("CV");
@@ -13,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let isThrottled;
   cards.forEach((card) => {
     card.addEventListener("click", function () {
-      showProject(this);
-      isThrottled = true;
-      setTimeout(function () {
-        isThrottled = false;
-      }, 700);
+      if (!isThrottled) {
+        showProject(this);
+        // double click is forbidden
+        isThrottled = true;
+        setTimeout(function () {
+          isThrottled = false;
+        }, 700);
+      }
     });
   });
 
@@ -62,14 +66,16 @@ function showView(name) {
 }
 
 function showProject(projectCard) {
+  // project card is expanded?
   let isActive = animateCard(projectCard);
+
   const line2 = projectCard.querySelector(".big-text");
   const line1 = projectCard.querySelector(".small-text");
   const line4 = projectCard.querySelector(".medium-text");
   const content = projectCard.querySelector(".CardContent");
   const linkContainer = projectCard.querySelector(".linkContainer");
   const marker = projectCard.querySelector(".flex-column").dataset.name;
-  const links = document.querySelectorAll("a");
+  const links = projectCard.querySelectorAll("a");
   let adition;
   switch (marker) {
     case "Wave Bookclub":
@@ -95,13 +101,12 @@ function showProject(projectCard) {
     }, 500);
 
     links.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (event) => {
+        console.log(link, "is clicked");
+        event.preventDefault();
         projectCard.querySelector(".projectText").style.display = "none";
         projectCard.querySelector(".spinner").style.display = "flex";
-        // const cards = document.querySelectorAll(".project-card");
-        // cards.forEach((card) => {
-        //   card.classList.remove("project-card");
-        // });
+        goingAway = true;
       });
     });
   } else {
@@ -113,17 +118,26 @@ function showProject(projectCard) {
     content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
     content.classList.remove("visible");
     content.style.display = "none";
+    if (goingAway) {
+      // Cloning the element and replacing it will remove event listener
+      const cards = document.querySelectorAll(".project-card");
+      cards.forEach((card) => {
+        const newCard = card.cloneNode(true);
+        card.parentNode.replaceChild(newCard, card);
+      });
+    }
   }
 }
 
 function animateCard(projectCard) {
+  console.log("summoned for:", projectCard);
   projectCard.classList.toggle("active");
   projectCard.classList.add("selected");
-  // move card up:
+  // move card:
   const rect = projectCard.getBoundingClientRect();
   const distanceToTop = rect.top + window.pageYOffset;
   projectCard.style.marginTop = `${-distanceToTop}px`;
-  // hide every other project card
+  // change every other project card visibility
   const elements = document.querySelectorAll(".project-card:not(.selected)");
   elements.forEach((element) => {
     element.classList.toggle("go");
