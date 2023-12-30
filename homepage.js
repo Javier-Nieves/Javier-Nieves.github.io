@@ -1,6 +1,11 @@
 "use strict";
 let goingAway;
 document.addEventListener("DOMContentLoaded", function () {
+  // back button function
+  window.addEventListener("popstate", function () {
+    loadCorrectView();
+  });
+
   document.querySelector(".CV-btn").onclick = () => {
     showView("CV");
   };
@@ -13,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".project-card");
   let isThrottled;
   cards.forEach((card) => {
+    addHoverEffect(card);
     card.addEventListener("click", function () {
       if (!isThrottled) {
         showProject(this);
@@ -35,6 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll);
 });
+
+function loadCorrectView() {
+  let url = window.location.href;
+  if (url.slice(-1) === "/") {
+    showView("main");
+  }
+}
 
 function showView(name) {
   let show;
@@ -63,6 +76,7 @@ function showView(name) {
     backImg.classList.remove("go");
   }, 500);
   appearAnimation(show === "CV");
+  show === "main" && window.history.pushState("_", "_", "/");
 }
 
 function showProject(projectCard) {
@@ -102,7 +116,6 @@ function showProject(projectCard) {
 
     links.forEach((link) => {
       link.addEventListener("click", () => {
-        console.log(link, "is clicked");
         projectCard.querySelector(".projectText").style.display = "none";
         projectCard.querySelector(".spinner").style.display = "flex";
         goingAway = true;
@@ -126,10 +139,10 @@ function showProject(projectCard) {
       });
     }
   }
+  // window.history.pushState("unused", "unused", `/${adition}`);
 }
 
 function animateCard(projectCard) {
-  console.log("summoned for:", projectCard);
   projectCard.classList.toggle("active");
   projectCard.classList.add("selected");
   // move card:
@@ -180,8 +193,26 @@ function showDiploma(which) {
   const dialog = document.querySelector("#diplomaModal");
   dialog.showModal();
   const img = document.querySelector(".modal-img");
-  img.src = `${which}`;
+  img.src = `img/${which}`;
   dialog.addEventListener("click", () => {
     dialog.close();
+  });
+}
+
+function addHoverEffect(card) {
+  const projects = document.querySelectorAll(".project-card");
+  card.addEventListener("mouseenter", () => {
+    projects.forEach((project) => {
+      project.classList.add("darkened");
+      project.querySelector(".projectText").classList.add("fade");
+    });
+    card.classList.remove("darkened");
+    card.querySelector(".projectText").classList.remove("fade");
+  });
+  card.addEventListener("mouseleave", () => {
+    projects.forEach((project) => {
+      project.classList.remove("darkened");
+      project.querySelector(".projectText").classList.remove("fade");
+    });
   });
 }

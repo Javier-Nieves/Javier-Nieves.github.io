@@ -1,6 +1,8 @@
 body {
   margin: 0;
   background-color: rgba(42, 42, 42, 0.98);
+  background-image: url('img/back8.jpeg');
+  background-size: cover;
 }
 .shadow-border {
   box-shadow: 0px 10px 18px 10px rgba(0, 0, 0, 0.1);
@@ -17,7 +19,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  background-image: url("22.jpg");
+  background-image: url("img/main_back.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
@@ -28,7 +30,7 @@ body {
   left: 0;
   min-width: 100vw;
   height: 139.5vh;
-  background-image: url("11.jpg");
+  background-image: url("img/CV_back.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -36,22 +38,26 @@ body {
 
 h1 {
   justify-content: flex-start;
-  margin: 15px 0 0 0;
+  margin: 5vh 0 1vh 0;
   padding: 0;
   color: #F7F6F4;
-  font-family: 'News Cycle', sans-serif;
-  font-size: 8.5vh;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10vh;
   font-weight: 800;
+  line-height: 10vh;
 }
 h2 {
-  font-size: 4vh;
-  margin: -5px 0 0 0;
-  font-family: 'News Cycle', sans-serif;
+  font-size: 5vh;
+  margin: 0 0 0 0;
+  font-family: 'Bebas Neue', sans-serif;
   color: #F7F6F4;
   transition: all 0.5s ease-in-out;
+  letter-spacing: 3px;
 }
 h2.main{
-  font-size: 3.5vh;
+  font-size: 4vh;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 a {
   display: flex;
@@ -79,7 +85,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 3vh;
-  margin-top: 20vh;
+  margin: 20vh 0 5vh 0;
 }
 .left-column, .right-column {
   flex-direction: column;
@@ -126,13 +132,11 @@ a {
   width: 9vw;
   height: 9vw;
 }
-.text-small {
-  font-size: 2.5vh;
-  color: black;
-}
 .link-text {
   color: white;
   font-size: 2.5vh;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
 
 /* btns */
@@ -158,6 +162,7 @@ a {
 }
 .CV-text {
   color: white;
+  font-weight: 600;
   font-size: 5vh;
 }
 
@@ -247,7 +252,7 @@ flex: 1;
   margin-bottom: 0;
 }
 h1.cv-heading {
-  margin-top: -1vh;
+  margin-top: 1vh;
 }
 h2.cv-heading {
   font-size: 4.5vh;
@@ -306,6 +311,7 @@ h3.cv-heading {
   justify-content: center;
   background-color: rgba(15, 14, 3, 0.75);
   border: 1px solid gray;
+  border-radius: 10px;
   color: black;
   width: 40vw;
   height: 20vh;
@@ -323,13 +329,13 @@ h3.cv-heading {
   background-size: cover;
 }
 .active.stocks {
-  background-image: url("stock3.jpeg");
+  background-image: url("img/stock3.jpeg");
 }
 .active.books{
-  background-image: url("book2.jpg");
+  background-image: url("img/book2.jpg");
 }
 .active.trilingua{
-  background-image: url("back01.jpg");
+  background-image: url("img/TL_back.jpg");
 }
 .project-btn {
   padding: 10px;
@@ -337,17 +343,29 @@ h3.cv-heading {
   cursor: pointer;
 }
 .small-text, .medium-text {
-  font-size: 1.5vh;
-  color: white;
+  margin: 0;
+  font-size: 2vh;
+  font-family: 'Playfair Display', serif;
+  color: rgb(209, 209, 209);
   transition: all 0.5s ease-in-out;
 }
-.medium-text {
-  font-size: 2vh;
+.big-text {
+  margin: 2.4vh 0 2.2vh 0;
 }
+/* .medium-text {
+  font-size: 2vh;
+} */
 .project-card:hover {
   cursor: pointer;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
 }
+.darkened {
+  background-color: rgba(3, 3, 3, 0.8);
+}
+.fade > * {
+  color: rgb(76, 76, 76);
+}
+
 .active:hover {
   cursor:default;
 }
@@ -403,7 +421,7 @@ h3.cv-heading {
   opacity: 0;
   justify-content: center;
   /* align-items: center; */
-  gap: 5vw;
+  gap: 1vw;
   transition: all 1s ease-in-out;
 }
 .visible {
@@ -421,6 +439,7 @@ h2.books, .small-text.books, .medium-text.books {
   color: white;
 }
 h2.books {
+  letter-spacing: -3px;
   font-family: 'Tangerine', cursive;
   font-size: 20vh;
   font-weight: 700;
@@ -437,6 +456,7 @@ h2.stocks {
   font-size: 17vh;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 500;
+  letter-spacing: -2px;
   margin: 2vh 0 1.5vh 0;
   -webkit-text-stroke: 3px white;
   text-stroke: 3px white;
@@ -479,9 +499,6 @@ dialog {
   position: fixed;
   opacity: 0;
   scale: 0;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   transition: all 0.5s;
 }
 dialog[open] {
