@@ -5,7 +5,7 @@ body {
   background-size: cover;
 }
 .shadow-border {
-  box-shadow: 0px 10px 18px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 18px 10px rgba(0, 0, 0, 0.08);
   position: fixed;
   top: 0;
   left: 0;
