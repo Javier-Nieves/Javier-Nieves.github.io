@@ -268,9 +268,10 @@ h3.cv-heading {
 }
 #container-diploma {
   margin-bottom: 3vh;
+  padding: 5px;
 }
 .cv-diploma{
-  width: 15vw;
+  width: 25%;
 }
 .cv-diploma:hover {
   cursor: pointer;
