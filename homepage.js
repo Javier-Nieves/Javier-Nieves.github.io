@@ -162,11 +162,14 @@ function appearAnimation(showing) {
   if (showing) {
     let timer = 600;
     for (let i = 1; i <= 5; i++) {
-      const block = document.querySelector(`.appear${i}`);
-      setTimeout(() => {
-        block.classList.add("visible-cv");
-      }, timer);
-      timer += 300;
+      const blocks = document.querySelectorAll(`.appear${i}`);
+      blocks.forEach((block) => {
+        setTimeout(() => {
+          block.classList.add("visible-cv");
+          console.log("visible added");
+        }, timer);
+        timer += 300;
+      });
     }
   } else {
     const cvBlocks = document.querySelectorAll(".visible-cv");

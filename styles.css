@@ -77,6 +77,7 @@ a {
   overflow-y: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1vw;
 }
 .flex-column-container {
@@ -270,8 +271,17 @@ h3.cv-heading {
   margin-bottom: 3vh;
   padding: 5px;
 }
+.img-line {
+  flex-wrap: wrap;
+  gap: 5px;
+}
 .cv-diploma{
-  width: 25%;
+  width: 48%;
+  height: 100%;
+}
+.cv-diploma-big {
+  width: 50%;
+  height: 100%;
 }
 .cv-diploma:hover {
   cursor: pointer;
