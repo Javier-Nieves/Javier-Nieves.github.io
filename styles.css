@@ -86,7 +86,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 3vh;
-  margin: 20vh 0 5vh 0;
+  margin: 20% 0 5vh 0;
 }
 .left-column, .right-column {
   flex-direction: column;
@@ -168,7 +168,6 @@ a {
 }
 
 /* Views */
-
 /* Main */
 
 #main-background {
@@ -346,7 +345,7 @@ h3.cv-heading {
 .active.books{
   background-image: url("img/book2.jpg");
 }
-.active.trilingua{
+.active.trilingua, .active.world{
   background-image: url("img/TL_back.jpg");
 }
 .project-btn {
@@ -443,6 +442,9 @@ h3.cv-heading {
   fill: white;
   width: 5vw;
   height: 5vw;
+}
+h2.world, .small-text.world, .medium-text.world {
+  color: #378f01;
 }
 h2.trilingua, .small-text.trilingua, .medium-text.trilingua {
   color: #378f01;

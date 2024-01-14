@@ -101,6 +101,9 @@ function showProject(projectCard) {
     case "Trilingua":
       adition = "trilingua";
       break;
+    case "See the World":
+      adition = "world";
+      break;
   }
   if (isActive) {
     document.querySelector("body").style.overflow = "hidden";
