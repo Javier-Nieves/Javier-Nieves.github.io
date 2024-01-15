@@ -353,7 +353,7 @@ h3.cv-heading {
   border: none;
   cursor: pointer;
 }
-.small-text, .medium-text {
+.small-text, .medium-text, .feature-text {
   margin: 0;
   font-size: 2vh;
   font-family: 'Playfair Display', serif;
@@ -362,6 +362,11 @@ h3.cv-heading {
 }
 .big-text {
   margin: 2.4vh 0 2.2vh 0;
+}
+.feature-text {
+  font-size: 3vh;
+  color: white;
+  margin-top: 20px;
 }
 /* .medium-text {
   font-size: 2vh;
@@ -487,7 +492,7 @@ h2.stocks {
 }
 .text4{
   font-size: 4vh;
-  margin: 0;
+  margin: 0 0 5vh 0;
 }
 .projectLink:hover {
   animation: shimmer 1s infinite alternate;

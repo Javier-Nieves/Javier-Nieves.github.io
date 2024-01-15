@@ -83,8 +83,8 @@ function showProject(projectCard) {
   // project card is expanded?
   let isActive = animateCard(projectCard);
 
-  const line2 = projectCard.querySelector(".big-text");
   const line1 = projectCard.querySelector(".small-text");
+  const line2 = projectCard.querySelector(".big-text");
   const line4 = projectCard.querySelector(".medium-text");
   const content = projectCard.querySelector(".CardContent");
   const linkContainer = projectCard.querySelector(".linkContainer");
