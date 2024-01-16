@@ -448,8 +448,8 @@ h3.cv-heading {
   width: 5vw;
   height: 5vw;
 }
-h2.world, .small-text.world, .medium-text.world {
-  color: #378f01;
+h2.world, .small-text.world, .medium-text.world, .feature-text.world {
+  color: #1D1C13;
 }
 h2.trilingua, .small-text.trilingua, .medium-text.trilingua {
   color: #378f01;
@@ -462,6 +462,11 @@ h2.books {
   font-family: 'Tangerine', cursive;
   font-size: 20vh;
   font-weight: 700;
+  margin: 2vh 0 2vh 0;
+}
+h2.world {
+  letter-spacing: -3px;
+  font-family: 'Russo One', sans-serif;
   margin: 2vh 0 2vh 0;
 }
 h2.stocks, .small-text.stocks, .medium-text.stocks {
