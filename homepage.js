@@ -81,8 +81,7 @@ function showView(name) {
 
 function showProject(projectCard) {
   // project card is expanded?
-  let isActive = animateCard(projectCard);
-
+  const isActive = animateCard(projectCard);
   const line1 = projectCard.querySelector(".small-text");
   const line2 = projectCard.querySelector(".big-text");
   const line4 = projectCard.querySelector(".medium-text");
@@ -112,7 +111,7 @@ function showProject(projectCard) {
     line4.classList.add("text4", `${adition}`);
     setTimeout(() => {
       content.style.display = "flex";
-      linkContainer.style.height = content.clientHeight === 0 ? "50vh" : "0px";
+      linkContainer.style.height = content.clientHeight === 0 ? "100%" : "0px";
       content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
       content.classList.add("visible");
     }, 500);
@@ -150,7 +149,7 @@ function animateCard(projectCard) {
   projectCard.classList.add("selected");
   // move card:
   const rect = projectCard.getBoundingClientRect();
-  const distanceToTop = rect.top + window.pageYOffset;
+  const distanceToTop = rect.top + window.scrollY;
   projectCard.style.marginTop = `${-distanceToTop}px`;
   // change every other project card visibility
   const elements = document.querySelectorAll(".project-card:not(.selected)");
@@ -169,7 +168,6 @@ function appearAnimation(showing) {
       blocks.forEach((block) => {
         setTimeout(() => {
           block.classList.add("visible-cv");
-          console.log("visible added");
         }, timer);
         timer += 300;
       });
@@ -185,10 +183,11 @@ function appearAnimation(showing) {
 function handleScroll() {
   const backGro = document.querySelector(".CV-background");
   const leftColumn = document.querySelector(".cv-left-part");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  const scrollBack = 0.53;
-  const scrollLeft = 0.8;
+  // this coeffitients affect scrolling of two columns and their position on the page
+  const scrollBack = 0.47;
+  const scrollLeft = 0.7;
   const tranValueBack = `translateY(${scrollTop * scrollBack}px)`;
   const tranValueLeft = `translateY(${scrollTop * scrollLeft}px)`;
   backGro.style.transform = tranValueBack;
@@ -206,6 +205,7 @@ function showDiploma(which) {
 }
 
 function addHoverEffect(card) {
+  // to darken rest of the project cards when one is hovered
   const projects = document.querySelectorAll(".project-card");
   card.addEventListener("mouseenter", () => {
     projects.forEach((project) => {

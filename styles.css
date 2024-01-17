@@ -112,7 +112,7 @@ a {
   align-items: center;
 }
 
-/* git link */
+/*! git link */
 .social-links {
   display: flex;
   gap: 4vw;
@@ -133,14 +133,17 @@ a {
   width: 9vw;
   height: 9vw;
 }
-.link-text {
-  color: white;
+.link-text, .link-text-white {
+  color: rgba(0, 0, 0, 0.65);
   font-size: 2.5vh;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
+.link-text-white {
+  color: whitesmoke;
+}
 
-/* btns */
+/*! btns */
 .CV-btn {
   margin-left: 15vw;
   margin-top: 23vh;
@@ -167,8 +170,8 @@ a {
   font-size: 5vh;
 }
 
-/* Views */
-/* Main */
+/*! Views */
+/*! Main */
 
 #main-background {
   transition: transform 0.5s, opacity 0.5s;
@@ -180,7 +183,7 @@ a {
   opacity: 0;
   transform: scale(0.95);
 }
-/* CV */
+/*! CV */
 .cv-left-part, .cv-right-part {
 display: flex;
 flex-direction: column;
@@ -364,9 +367,10 @@ h3.cv-heading {
   margin: 2.4vh 0 2.2vh 0;
 }
 .feature-text {
-  font-size: 3vh;
+  font-size: 3.2vh;
   color: white;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  padding: 12px;
 }
 /* .medium-text {
   font-size: 2vh;
@@ -416,16 +420,19 @@ h3.cv-heading {
   padding: 15px;
   border: 1px solid whitesmoke;
   border-radius: 10px;
-  margin-top: 10vh;
+  /* margin-top: 3vh; */
 }
 .projectLink.stocks {
-  background-color: rgba(182, 138, 16, 0.7);
+  background-color: rgba(182, 138, 16, 0.9);
 }
 .projectLink.books {
-  background-color: rgba(221, 219, 219, 0.7);
+  background-color: rgba(221, 219, 219, 0.9);
+}
+.projectLink.world {
+  background-color: rgba(221, 219, 219, 0.9);
 }
 .projectLink.trilingua {
-  background-color: rgba(96, 143, 1, 0.7);
+  background-color: rgba(96, 143, 1, 0.9);
 }
 .linkContainer {
   height: 0px;
@@ -443,10 +450,29 @@ h3.cv-heading {
 .visible {
   opacity: 1;
 }
-.svg-project {
-  fill: white;
+.features-container-world, .features-container-books, .features-container-stocks {
+  width: 40vw;
+  background-color: rgba(221, 219, 219, 0.9);
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+.features-container-books {
+  background-color: rgba(2, 2, 2, 0.7);
+  border: none;
+}
+.features-container-stocks {
+  background-color: rgba(182, 138, 16, 0.9);
+}
+.svg-project, .svg-project-white {
+  fill: rgba(0, 0, 0, 0.65);
   width: 5vw;
   height: 5vw;
+}
+.svg-project-white {
+  fill: whitesmoke;
 }
 h2.world, .small-text.world, .medium-text.world, .feature-text.world {
   color: #1D1C13;
@@ -462,7 +488,7 @@ h2.books {
   font-family: 'Tangerine', cursive;
   font-size: 20vh;
   font-weight: 700;
-  margin: 2vh 0 2vh 0;
+  margin: 4vh 4vw 1vh 0;
 }
 h2.world {
   letter-spacing: -3px;
@@ -481,7 +507,7 @@ h2.stocks {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 500;
   letter-spacing: -2px;
-  margin: 2vh 0 1.5vh 0;
+  margin: 2vh 0 0 0;
   -webkit-text-stroke: 3px white;
   text-stroke: 3px white;
 }
@@ -497,7 +523,7 @@ h2.stocks {
 }
 .text4{
   font-size: 4vh;
-  margin: 0 0 5vh 0;
+  margin: 0 0 3vh 0;
 }
 .projectLink:hover {
   animation: shimmer 1s infinite alternate;
