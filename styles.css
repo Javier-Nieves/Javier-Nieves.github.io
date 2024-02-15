@@ -4,6 +4,12 @@ body {
   background-image: url('img/back8.jpeg');
   background-size: cover;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .shadow-border {
   box-shadow: 0px 10px 18px 10px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -12,7 +18,6 @@ body {
   width: 100%;
   z-index: 99;
 }
-
 .main-background {
   position: fixed;
   top: 0;
@@ -37,6 +42,7 @@ body {
 }
 
 h1 {
+  width: 100%;
   justify-content: flex-start;
   margin: 5vh 0 1vh 0;
   padding: 0;
@@ -86,7 +92,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 3vh;
-  margin: 11% 0 5vh 0;
+  margin: 5vh 0 5vh 0;
 }
 .left-column, .right-column {
   flex-direction: column;
@@ -94,23 +100,19 @@ a {
 .left-column {
   position: fixed;
   width: 45vw;
+  height: 100%;
   padding-left: 5vw;
   top: 0;
-  bottom: 0;
   left: 0;
+  justify-content:flex-start;
 }
 .right-column {
   flex: 1;
   overflow-y: scroll;
   margin-left: 45vw;
-  margin-top: -50px;
+  /* margin-top: -50px; */
 }
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /*! git link */
 .social-links {
@@ -150,8 +152,8 @@ a {
 
 /*! btns */
 .CV-btn {
-  margin-left: 15vw;
-  margin-top: 18vh;
+  /* margin-left: 15vw; */
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   width: 16vw;
@@ -364,11 +366,13 @@ h3.cv-heading {
   cursor: pointer;
 }
 .small-text, .medium-text, .feature-text {
+  padding: 0 5px;
   margin: 0;
   font-size: 2vh;
   font-family: 'Playfair Display', serif;
   color: rgb(209, 209, 209);
   transition: all 0.5s ease-in-out;
+  text-align: center;
 }
 .big-text {
   margin: 2.4vh 0 2.2vh 0;
@@ -619,4 +623,13 @@ dialog::backdrop {
   transition: all 0.5s ease-in-out;
   transform: rotate(45deg); /* Rotate the ribbon */
   transform-origin: top right; /* Set rotation origin */
+}
+
+@media screen and (max-width: 1200px) {
+  .social-links {
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+  }
+
 }
