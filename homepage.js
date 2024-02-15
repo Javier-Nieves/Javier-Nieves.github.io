@@ -208,14 +208,23 @@ function addHoverEffect(card) {
   // to darken rest of the project cards when one is hovered
   const projects = document.querySelectorAll(".project-card");
   card.addEventListener("mouseenter", () => {
+    // darken all cards
     projects.forEach((project) => {
       project.classList.add("darkened");
       project.querySelector(".projectText").classList.add("fade");
+      const ribbon = project.querySelector(".dev-ribbon");
+      ribbon && ribbon.classList.add("dark-ribbon");
     });
+    // lighten hovered card
     card.classList.remove("darkened");
     card.querySelector(".projectText").classList.remove("fade");
+    const ribbon = card.querySelector(".dev-ribbon");
+    ribbon && ribbon.classList.remove("dark-ribbon");
   });
+
   card.addEventListener("mouseleave", () => {
+    const ribbons = document.querySelectorAll(".dev-ribbon");
+    ribbons.forEach((ribbon) => ribbon.classList.remove("dark-ribbon"));
     projects.forEach((project) => {
       project.classList.remove("darkened");
       project.querySelector(".projectText").classList.remove("fade");

@@ -86,7 +86,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 3vh;
-  margin: 20% 0 5vh 0;
+  margin: 11% 0 5vh 0;
 }
 .left-column, .right-column {
   flex-direction: column;
@@ -120,8 +120,12 @@ a {
   bottom: 10vh;
   left: 8vw;
 }
+.social-links > * {
+  transition: all 0.5s ease-in-out;
+}
 .social-links > *:hover{
-  text-decoration: underline;
+  text-decoration: none;
+  transform: scale(1.05);
 }
 .svg-git {
   fill: white;
@@ -138,6 +142,7 @@ a {
   font-size: 2.5vh;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
+  text-decoration: none;
 }
 .link-text-white {
   color: whitesmoke;
@@ -321,6 +326,8 @@ h3.cv-heading {
   overflow: visible;
 }
 .project-card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   background-color: rgba(15, 14, 3, 0.75);
@@ -384,6 +391,11 @@ h3.cv-heading {
 }
 .fade > * {
   color: rgb(76, 76, 76);
+}
+.dark-ribbon {
+  background-color: rgb(77, 1, 1) !important;
+  color: rgb(76, 76, 76) !important;
+  border: 1px solid grey !important;
 }
 
 .active:hover {
@@ -594,4 +606,17 @@ dialog::backdrop {
 .spinner  > h2 {
   font-size: 7vh;
   margin-right: 1vw;
+}
+.dev-ribbon {
+  position: absolute;
+  top: 144px;
+  right: -70px;
+  background-color: rgb(184, 1, 1);
+  color: white;
+  padding: 5px 100px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: all 0.5s ease-in-out;
+  transform: rotate(45deg); /* Rotate the ribbon */
+  transform-origin: top right; /* Set rotation origin */
 }
