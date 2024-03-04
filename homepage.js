@@ -1,28 +1,32 @@
 "use strict";
 let goingAway;
 document.addEventListener("DOMContentLoaded", function () {
+  // DOM selector
+  const CVbtn = document.querySelector(".CV-btn");
+  const backBtn = document.querySelector(".back-arrow");
+  const cards = document.querySelectorAll(".project-card");
+  const diplomas = document.querySelectorAll(".cv-diploma");
+
+  //! handlers
+  // views:
+  CVbtn.addEventListener("click", () => showView("CV"));
+  backBtn.addEventListener("click", () => showView("main"));
+
   // back button function
   window.addEventListener("popstate", function () {
     loadCorrectView();
   });
 
-  document.querySelector(".CV-btn").onclick = () => {
-    showView("CV");
-  };
-
-  const backBtn = document.querySelector(".back-arrow");
-  backBtn.addEventListener("click", () => {
-    showView("main");
-  });
-
-  const cards = document.querySelectorAll(".project-card");
+  // expanding project cards:
   let isThrottled;
   cards.forEach((card) => {
+    // darken all cards except of the hovered:
     addHoverEffect(card);
+
     card.addEventListener("click", function () {
       if (!isThrottled) {
         showProject(this);
-        // double click is forbidden
+        // double click on a project card is forbidden
         isThrottled = true;
         setTimeout(function () {
           isThrottled = false;
@@ -31,17 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const imgs = document.querySelectorAll(".cv-diploma");
-  imgs.forEach((img) => {
+  // show diplomas in a dialog window
+  diplomas.forEach((img) => {
     img.addEventListener("click", () => {
-      const which = img.dataset.diploma;
-      showDiploma(which);
+      const school = img.dataset.diploma;
+      showDiploma(school);
     });
   });
 
+  // parallax scrolling in CV view
   window.addEventListener("scroll", handleScroll);
 });
 
+// todo - other view?
 function loadCorrectView() {
   let url = window.location.href;
   if (url.slice(-1) === "/") {
@@ -50,8 +56,8 @@ function loadCorrectView() {
 }
 
 function showView(name) {
-  let show;
-  let hide;
+  let show, hide;
+
   if (name === "CV") {
     show = "CV";
     hide = "main";
@@ -81,34 +87,22 @@ function showView(name) {
 
 function showProject(projectCard) {
   // project card is expanded?
-  const isActive = animateCard(projectCard);
-  const line1 = projectCard.querySelector(".small-text");
-  const line2 = projectCard.querySelector(".big-text");
-  const line4 = projectCard.querySelector(".medium-text");
-  const content = projectCard.querySelector(".CardContent");
+  const cardIsExpanded = animateCard(projectCard);
+
+  const line1 = projectCard.querySelector(".projectDesc__small-text");
+  const line2 = projectCard.querySelector(".projectDesc__big-text");
+  const line4 = projectCard.querySelector(".projectDesc__medium-text");
+  const content = projectCard.querySelector(".ExpandedCardContent");
   const linkContainer = projectCard.querySelector(".linkContainer");
-  const marker = projectCard.querySelector(".flex-column").dataset.name;
   const links = projectCard.querySelectorAll("a");
-  let adition;
-  switch (marker) {
-    case "Wave Bookclub":
-      adition = "books";
-      break;
-    case "Stock Sprout":
-      adition = "stocks";
-      break;
-    case "Trilingua":
-      adition = "trilingua";
-      break;
-    case "See the World":
-      adition = "world";
-      break;
-  }
-  if (isActive) {
+  const marker = projectCard.querySelector(".project-card__content").dataset
+    .name;
+
+  if (cardIsExpanded) {
     document.querySelector("body").style.overflow = "hidden";
-    line1.classList.add("text1", `${adition}`);
-    line2.classList.add("projectTitle", `${adition}`);
-    line4.classList.add("text4", `${adition}`);
+    line1.classList.add("text1", `${marker}`);
+    line2.classList.add("projectTitle", `${marker}`);
+    line4.classList.add(`${marker}`);
     setTimeout(() => {
       content.style.display = "flex";
       linkContainer.style.height = content.clientHeight === 0 ? "100%" : "0px";
@@ -118,16 +112,17 @@ function showProject(projectCard) {
 
     links.forEach((link) => {
       link.addEventListener("click", () => {
-        projectCard.querySelector(".projectText").style.display = "none";
+        projectCard.querySelector(".projectDesc-container").style.display =
+          "none";
         projectCard.querySelector(".spinner").style.display = "flex";
         goingAway = true;
       });
     });
   } else {
     document.querySelector("body").style.overflow = "scroll";
-    line1.classList.remove("text1", `${adition}`);
-    line2.classList.remove("projectTitle", `${adition}`);
-    line4.classList.remove("text4", `${adition}`);
+    line1.classList.remove("text1", `${marker}`);
+    line2.classList.remove("projectTitle", `${marker}`);
+    line4.classList.remove("text4", `${marker}`);
     linkContainer.style.height = content.clientHeight === 0 ? "50vh" : "0px";
     content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
     content.classList.remove("visible");
@@ -211,13 +206,13 @@ function addHoverEffect(card) {
     // darken all cards
     projects.forEach((project) => {
       project.classList.add("darkened");
-      project.querySelector(".projectText").classList.add("fade");
+      project.querySelector(".projectDesc-container").classList.add("fade");
       const ribbon = project.querySelector(".dev-ribbon");
       ribbon && ribbon.classList.add("dark-ribbon");
     });
     // lighten hovered card
     card.classList.remove("darkened");
-    card.querySelector(".projectText").classList.remove("fade");
+    card.querySelector(".projectDesc-container").classList.remove("fade");
     const ribbon = card.querySelector(".dev-ribbon");
     ribbon && ribbon.classList.remove("dark-ribbon");
   });
@@ -227,7 +222,7 @@ function addHoverEffect(card) {
     ribbons.forEach((ribbon) => ribbon.classList.remove("dark-ribbon"));
     projects.forEach((project) => {
       project.classList.remove("darkened");
-      project.querySelector(".projectText").classList.remove("fade");
+      project.querySelector(".projectDesc-container").classList.remove("fade");
     });
   });
 }

@@ -18,7 +18,7 @@
         <section id="main-view">
             <div class="flex-container" id="main-container">
                 <div class="flex-column left-column">
-                    <div>
+                    <div class="brand-container">
                         <h1 id="name">Konstantin Nikolskiy</h1>
                         <h2 class="main"> Software Developer with science and engineering background</h2>
                     </div>
@@ -53,7 +53,7 @@
 
                         <article class="project-card world">
                             <div class="dev-ribbon">in development</div>
-                            <div class="flex-column" data-name="See the World">
+                            <div class="flex-column project-card__content" data-name="world">
                                 <div class="flex-container spinner">
                                     <div class="flex-column">
                                         <h2>See the World</h2>
@@ -61,13 +61,13 @@
                                     </div>
                                     <div class="lds-dual-ring"></div>
                                 </div>
-                                <div class="flex-column projectText">
-                                    <p class="small-text">Node.js, JavaScript</p>
-                                    <h2 class="big-text">See the World</h2>
-                                    <p class="medium-text">Travelers social network with variety of functions and modules</p>
+                                <div class="flex-column projectDesc-container">
+                                    <p class="projectDesc__small-text">Node.js, JavaScript</p>
+                                    <h2 class="projectDesc__big-text">See the World</h2>
+                                    <p class="projectDesc__medium-text">Travelers social network with variety of functions and modules</p>
                                 </div>
-                                <div class="CardContent flex-column">
-                                    <div class="flex-column features-container-world">
+                                <div class="flex-column ExpandedCardContent">
+                                    <div class="flex-column features-container world">
                                         <p class="feature-text world"> - Friend requests, likes, comments, password change </p>
                                         <p class="feature-text world"> - JSON web tokens authentification</p>
                                         <p class="feature-text world"> - External modules for email and map features </p>
@@ -93,7 +93,8 @@
                         </article>
 
                         <article class="project-card books">
-                            <div class="flex-column" data-name="Wave Bookclub">
+                            <div class="flex-column project-card__content" data-name="books">
+                                <!-- spinner for loading -->
                                 <div class="flex-container spinner">
                                     <div class="flex-column">
                                         <h2>Wave Bookclub</h2>
@@ -101,20 +102,21 @@
                                     </div>
                                     <div class="lds-dual-ring"></div>
                                 </div>
-                                <div class="flex-column projectText">
-                                    <p class="small-text">JavaScript, Django</p>
-                                    <h2 class="big-text">Wave Bookclub</h2>
-                                    <p class="medium-text">Bookclub site with API, history and rating systems</p>
+                                <!-- visible part in collapsed form --- top part in expanded form -->
+                                <div class="flex-column projectDesc-container">
+                                    <p class="projectDesc__small-text">JavaScript, Django</p>
+                                    <h2 class="projectDesc__big-text">Wave Bookclub</h2>
+                                    <p class="projectDesc__medium-text">Bookclub site with API, history and rating system</p>
                                 </div>
-                                <div class="CardContent flex-column">
-                                    <!-- <video class="projectVideo" src="video_book.mp4" loading="lazy" loop autoplay></video> -->
-                                    <div class="flex-column features-container-books">
+                                <!-- Details in expanded form -->
+                                <div class="flex-column ExpandedCardContent">
+                                    <div class="flex-column features-container books">
                                         <p class="feature-text"> - Create bookclubs </p>
                                         <p class="feature-text"> - Use API to find book information </p>
                                         <p class="feature-text"> - Create reading lists and rate books </p>
                                         <p class="feature-text"> - Keep track of your reading history </p>
                                     </div>
-                                    <div class="flex linkContainer" style="gap:3vw">
+                                    <div class="flex linkContainer">
                                         <a class="flex link-text projectLink books" href="https://wave-bookclub.onrender.com/">
                                             <svg viewBox="-1 -1 30 30" class="svg-project link-text">
                                                 <path d="M22 24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h17v24zm-2-4h-14.505c-1.375 0-1.375 2 0 2h14.505v-2zm0-18h-3v9l-2-1.547-2 1.547v-9h-8v16h15v-16z"/></svg>
@@ -134,7 +136,7 @@
                         </article>
 
                         <article class="project-card stocks">
-                            <div class="flex-column" data-name="Stock Sprout">
+                            <div class="flex-column project-card__content" data-name="stocks">
                                 <div class="flex-container spinner">
                                     <div class="flex-column">
                                         <h2>Stock Sprout</h2>
@@ -142,13 +144,13 @@
                                     </div>
                                     <div class="lds-dual-ring"></div>
                                 </div>
-                                <div class="flex-column projectText">
-                                    <p class="small-text">Django, JavaScript</p>
-                                    <h2 class="big-text">Stock Sprout</h2>
-                                    <p class="medium-text">Real-time stock exchange portfolio monitoring app</p>
+                                <div class="flex-column projectDesc-container">
+                                    <p class="projectDesc__small-text">Django, JavaScript</p>
+                                    <h2 class="projectDesc__big-text">Stock Sprout</h2>
+                                    <p class="projectDesc__medium-text">Real-time stock exchange portfolio monitoring app</p>
                                 </div>
-                                <div class="flex-column CardContent">
-                                    <div class="flex-column features-container-stocks">
+                                <div class="flex-column ExpandedCardContent">
+                                    <div class="flex-column features-container stocks">
                                         <p class="feature-text"> - Use API to find stocks information </p>
                                         <p class="feature-text"> - Add stocks to your portfolio </p>
                                         <p class="feature-text"> - Update prices automatically to see your profits </p>
@@ -176,8 +178,8 @@
                         </article>
                         
                         <article class="project-card psychology">
-                            <div class="dev-ribbon">in development</div>
-                            <div class="flex-column" data-name="Psychology">
+                            <!-- <div class="dev-ribbon">in development</div> -->
+                            <div class="flex-column project-card__content" data-name="Psychology">
                                 <div class="flex-container spinner">
                                     <div class="flex-column">
                                         <h2>Psychology</h2>
@@ -185,13 +187,13 @@
                                     </div>
                                     <div class="lds-dual-ring"></div>
                                 </div>
-                                <div class="flex-column projectText">
-                                    <p class="small-text">Node.js</p>
-                                    <h2 class="big-text">Psychology</h2>
-                                    <p class="medium-text">Personal web-page of a psychologist</p>
+                                <div class="flex-column projectDesc-container">
+                                    <p class="projectDesc__small-text">Node.js</p>
+                                    <h2 class="projectDesc__big-text">Psychology</h2>
+                                    <p class="projectDesc__medium-text">Personal web-page of a psychologist</p>
                                 </div>
-                                <div class="flex-column CardContent">
-                                    <div class="flex-column features-container-stocks">
+                                <div class="flex-column ExpandedCardContent">
+                                    <div class="flex-column features-container psychology">
                                         <p class="feature-text"> - Use API to find stocks information </p>
                                         <p class="feature-text"> - Add stocks to your portfolio </p>
                                         <p class="feature-text"> - Update prices automatically to see your profits </p>
@@ -218,37 +220,6 @@
                             </div>
                         </article>
 
-                        <!-- <article class="project-card trilingua">
-                            <div class="spinner">
-                                <h2>Trilingua</h2>
-                                <div class="lds-dual-ring"></div>
-                            </div>
-                            <div class="flex-column" data-name="Trilingua">
-                                <div class="flex-column projectText">
-                                    <p class="small-text">Flask, SQL, JavaScript</p>
-                                    <h2 class="big-text">Trilingua</h2>
-                                    <p class="medium-text">DB-based tri-lingual translator with training functional</p>
-                                </div>
-                                <div class="CardContent">
-                                    <div class="flex linkContainer"  style="gap:3vw">
-                                        <a class="flex link-text projectLink trilingua" href="http://javiernieves.pythonanywhere.com">
-                                            <svg viewBox="-1 -1 30 30" class="svg-project link-text">
-                                                <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 3c-4.971 0-9 4.029-9 9s4.029 9 9 9 9-4.029 9-9-4.029-9-9-9zm1 13.947v1.053h-1v-.998c-1.035-.018-2.106-.265-3-.727l.455-1.644c.956.371 2.229.765 3.225.54 1.149-.26 1.385-1.442.114-2.011-.931-.434-3.778-.805-3.778-3.243 0-1.363 1.039-2.583 2.984-2.85v-1.067h1v1.018c.725.019 1.535.145 2.442.42l-.362 1.648c-.768-.27-1.616-.515-2.442-.465-1.489.087-1.62 1.376-.581 1.916 1.711.804 3.943 1.401 3.943 3.546.002 1.718-1.344 2.632-3 2.864z">
-                                                </path>
-                                            </svg>
-                                            <span class="text3">Site</span>
-                                        </a>
-                                        <a class="flex link-text projectLink trilingua" href="https://github.com/Javier-Nieves/Trilingua.git">
-                                            <svg viewBox="-1 -1 30 30" class="svg-project link-text">
-                                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
-                                                </path>
-                                            </svg>
-                                            <span class="text3">Code</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article> -->
                     </div>
                 </div>
             </div>
