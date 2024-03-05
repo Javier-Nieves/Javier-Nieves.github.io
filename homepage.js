@@ -177,16 +177,16 @@ function appearAnimation(showing) {
 }
 
 function handleScroll() {
-  const backGro = document.querySelector(".CV-background");
+  // const backGro = document.querySelector(".CV-background");
   const leftColumn = document.querySelector(".cv-left-part");
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   // this coeffitients affect scrolling of two columns and their position on the page
-  const scrollBack = 0.47;
+  // const scrollBack = 0.47;
   const scrollLeft = 0.7;
-  const tranValueBack = `translateY(${scrollTop * scrollBack}px)`;
+  // const tranValueBack = `translateY(${scrollTop * scrollBack}px)`;
   const tranValueLeft = `translateY(${scrollTop * scrollLeft}px)`;
-  backGro.style.transform = tranValueBack;
+  // backGro.style.transform = tranValueBack;
   leftColumn.style.transform = tranValueLeft;
 }
 
