@@ -89,27 +89,26 @@ function showProject(projectCard) {
   // project card is expanded?
   const cardIsExpanded = animateCard(projectCard);
 
-  const line1 = projectCard.querySelector(".projectDesc__small-text");
-  const line2 = projectCard.querySelector(".projectDesc__big-text");
-  const line4 = projectCard.querySelector(".projectDesc__medium-text");
+  const upperText = [
+    projectCard.querySelector(".projectDesc__small-text"),
+    projectCard.querySelector(".projectDesc__big-text"),
+    projectCard.querySelector(".projectDesc__medium-text"),
+  ];
   const content = projectCard.querySelector(".ExpandedCardContent");
-  const linkContainer = projectCard.querySelector(".linkContainer");
   const links = projectCard.querySelectorAll("a");
   const marker = projectCard.querySelector(".project-card__content").dataset
     .name;
 
   if (cardIsExpanded) {
+    // stop scrolling when project card is expanded
     document.querySelector("body").style.overflow = "hidden";
-    line1.classList.add("text1", `${marker}`);
-    line2.classList.add("projectTitle", `${marker}`);
-    line4.classList.add(`${marker}`);
+    // change upper text style
+    upperText.forEach((line) => line.classList.add(marker));
+    // Project details appearance
     setTimeout(() => {
-      content.style.display = "flex";
-      linkContainer.style.height = content.clientHeight === 0 ? "100%" : "0px";
-      content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
       content.classList.add("visible");
     }, 500);
-
+    // if link is clicked - load spinner and deactivate all project cards
     links.forEach((link) => {
       link.addEventListener("click", () => {
         projectCard.querySelector(".projectDesc-container").style.display =
@@ -119,16 +118,18 @@ function showProject(projectCard) {
       });
     });
   } else {
+    // enable scrolling once again
     document.querySelector("body").style.overflow = "scroll";
-    line1.classList.remove("text1", `${marker}`);
-    line2.classList.remove("projectTitle", `${marker}`);
-    line4.classList.remove("text4", `${marker}`);
-    linkContainer.style.height = content.clientHeight === 0 ? "50vh" : "0px";
-    content.style.height = content.clientHeight === 0 ? "50vh" : "0px";
+    upperText.forEach((line) => line.classList.remove(marker));
     content.classList.remove("visible");
+    // instant details hiding instead of 500ms transition:
     content.style.display = "none";
+    setTimeout(() => {
+      content.style.display = "flex";
+    }, 400);
+
+    // Cloning the element and replacing it will remove event listeners:
     if (goingAway) {
-      // Cloning the element and replacing it will remove event listener
       const cards = document.querySelectorAll(".project-card");
       cards.forEach((card) => {
         const newCard = card.cloneNode(true);
@@ -136,11 +137,11 @@ function showProject(projectCard) {
       });
     }
   }
-  // window.history.pushState("unused", "unused", `/${adition}`);
+  // window.history.pushState("_", "_", `/${adition}`);
 }
 
 function animateCard(projectCard) {
-  projectCard.classList.toggle("active");
+  projectCard.classList.toggle("expanded");
   projectCard.classList.add("selected");
   // move card:
   const rect = projectCard.getBoundingClientRect();
@@ -152,7 +153,7 @@ function animateCard(projectCard) {
     element.classList.toggle("go");
   });
   projectCard.classList.remove("selected");
-  return projectCard.className.includes("active");
+  return projectCard.className.includes("expanded");
 }
 
 function appearAnimation(showing) {
