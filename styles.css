@@ -401,9 +401,9 @@ dialog::backdrop {
   cursor: pointer;
 }
 .projectDesc__big-text {
-  margin: 15px 0;
+  margin: 20px 0 15px 0;
 }
-.projectDesc__small-text, .projectDesc__medium-text, .feature-text {
+.projectDesc__small-text, .projectDesc__medium-text, .features-container p {
   padding: 0 5px;
   margin: 0;
   font-size: 2vh;
@@ -412,7 +412,7 @@ dialog::backdrop {
   transition: all 0.5s ease-in-out;
   text-align: center;
 }
-.feature-text {
+.features-container p {
   font-size: 26px;
   color: var(--white);
   padding: 12px;
@@ -447,7 +447,7 @@ dialog::backdrop {
   width: 2vw;
 }
 .projectDesc-container {
-  margin-top: 10px;
+  margin-top: 30px;
   transition: all 1s ease-in-out;
 }
 .project-card__content {
@@ -545,15 +545,12 @@ dialog::backdrop {
 .expanded.books{
   background-image: url("img/books_back.jpg");
 }
-.projectLink.books {
-  background-color: rgba(221, 219, 219, 0.9);
+.books .svg-project {
+  fill: var(--white);
 }
 .projectDesc__big-text.books, .projectDesc__small-text.books, 
-.projectDesc__medium-text.books {
+.projectDesc__medium-text.books, .books p {
   color: var(--white);
-}
-.projectDesc__medium-text.books {
-  font-size: 2em;
 }
 .projectDesc__big-text.books {
   letter-spacing: -3px;
@@ -562,36 +559,50 @@ dialog::backdrop {
   font-weight: 700;
   margin-right: 30px;
 }
-.features-container.books {
-  background-color: rgba(2, 2, 2, 0.7);
-  border: none;
+.projectDesc__medium-text.books {
+  font-size: 2em;
 }
-
+.projectDesc__small-text.books {
+  font-size: 1.5em;
+}
+.features-container.books, .projectLink.books {
+  background-color: rgba(23, 15, 9, 0.9);
+  color: var(--white);
+}
 
 /*! STOCKS  */
 .expanded.stocks {
   background-image: url("img/stocks_back.jpeg");
 }
-.projectLink.stocks {
+.projectDesc-container {
+  margin-bottom: 20px;
+}
+.projectLink.stocks, .features-container.stocks {
   background-color: rgba(182, 138, 16, 0.9);
 }
 .projectDesc__big-text.stocks, .projectDesc__small-text.stocks, .projectDesc__medium-text.stocks {
   -webkit-text-stroke: 1px var(--white);
-  -webkit-text-fill-color: rgba(249, 205, 27, 0.831);
+  -webkit-text-fill-color: rgb(203, 167, 21);
+}
+.projectDesc__small-text.stocks {
+  font-size: 1.5em;
 }
 .projectDesc__medium-text.stocks {
-  font-size: 5vh;
+  font-size: 2em;
 }
 .projectDesc__big-text.stocks {
-  font-size: 10em;
+  font-size: 9em;
   font-family: var(--title-font);
   font-weight: 500;
   letter-spacing: -2px;
-  margin: 10px 0 -20px 0;
+  margin: 30px 0 0 0;
   -webkit-text-stroke: 3px var(--white);
 }
-.features-container.stocks {
-  background-color: rgba(182, 138, 16, 0.9);
+.stocks p {
+  padding: 10px;
+}
+.projectLink.stocks {
+  color: var(--white);
 }
 
 /*! WORLD */
@@ -602,7 +613,7 @@ dialog::backdrop {
   background-color: rgba(221, 219, 219, 0.9);
 }
 .projectDesc__big-text.world, .projectDesc__small-text.world, 
-.projectDesc__medium-text.world, .feature-text.world {
+.projectDesc__medium-text.world, .world p {
   color: #1D1C13;
 }
 .projectDesc__small-text.world {
@@ -619,12 +630,46 @@ dialog::backdrop {
 
 
 /*! PSYCHOLOGY */
-.features-container.psychology {
+.expanded.psychology{
+  background-image: url("img/psycho_back.jpeg");
+}
+.projectLink.psychology {
   background-color: rgba(221, 219, 219, 0.9);
-  border: 1px solid var(--white);
+}
+.projectDesc__big-text.psychology, .projectDesc__small-text.psychology, 
+.projectDesc__medium-text.psychology {
+  color: rgb(56, 99, 26);
+}
+.psychology p {
+  color: rgb(40, 70, 18);
+}
+.projectDesc__small-text.psychology {
+  font-size: 1.5em;
+}
+.projectDesc__medium-text.psychology {
+  font-size: 2em;
+}
+.projectDesc__big-text.psychology {
+  background-image: linear-gradient(90deg, rgb(43, 73, 25), #6bac2b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 25px 0;
+  letter-spacing: -3px;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  font-size: 7em;
+  height: 120px;
+}
+.features-container.psychology, .projectLink.psychology {
+  background-color: rgba(135, 179, 17, 0.7);
 }
 
-
+.psychology img {
+  margin-right: 5px;
+  height: 43px;
+  width: 43px;
+}
 
 /*! --------------------------------------- Mobile devices --------------------------------------- */
 .social-links-mobile {
