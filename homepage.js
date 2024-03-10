@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   backBtn.addEventListener("click", () => showView("main"));
 
   // back button function
-  window.addEventListener("popstate", function () {
-    loadCorrectView();
-  });
+  window.addEventListener("popstate", loadCorrectView);
 
   // expanding project cards:
   let isThrottled;
@@ -60,6 +58,9 @@ function loadCorrectView() {
   if (url.slice(-1) === "/") {
     showView("main");
   }
+  // if (url.slice(-2) === "CV") {
+  //   showView("CV");
+  // }
 }
 
 function showView(name) {
@@ -188,16 +189,10 @@ function appearAnimation(showing) {
 }
 
 function handleScroll(leftColumn) {
-  console.log(leftColumn);
-  // const backGro = document.querySelector(".CV-background");
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
   // this coeffitients affect scrolling of two columns and their position on the page
-  // const scrollBack = 0.47;
   const scrollLeft = 0.7;
-  // const tranValueBack = `translateY(${scrollTop * scrollBack}px)`;
   const tranValueLeft = `translateY(${scrollTop * scrollLeft}px)`;
-  // backGro.style.transform = tranValueBack;
   leftColumn.style.transform = tranValueLeft;
 }
 

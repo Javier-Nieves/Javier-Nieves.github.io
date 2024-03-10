@@ -839,6 +839,9 @@ dialog::backdrop {
   .CV-btn, .social-links {
     display: none;
   }
+  .CV-background {
+    background-size: auto 900px;
+  }
   #diplomaModal {
     width: 90%;
     border-radius: 10px;
