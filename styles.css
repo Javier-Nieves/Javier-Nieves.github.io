@@ -44,15 +44,15 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1vw;
+  gap: 15px;
 }
 .flex-column-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3vh;
-  margin: 5vh 0 5vh 0;
+  gap: 30px;
+  margin: 5% 0;
 }
 .left-column, .right-column {
   flex-direction: column;
@@ -121,11 +121,11 @@ a {
 /* social links */
 .social-links {
   display: flex;
-  gap: 40px;
   flex-direction: row;
+  justify-content: center;
+  gap: 40px;
   width: 100%;
   padding-bottom: 10%;
-  margin-left: 25%;
 }
 .social-links > * {
   transition: all 0.5s ease-in-out;
@@ -146,7 +146,7 @@ a {
 }
 .link-text-white, .CV-text {
   color: var(--white);
-  font-size: 2.5vh;
+  font-size: 20px;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   text-decoration: none;
@@ -172,8 +172,8 @@ a {
   display: none;
 }
 .spinner  > h2 {
-  font-size: 7vh;
-  margin-right: 1vw;
+  font-size: 20px;
+  margin-right: 10px;
 }
 @keyframes lds-dual-ring {
   0% {
@@ -196,23 +196,29 @@ a {
   background-size: cover;
   background-attachment: fixed;
 }
+.cv-container {
+  align-items: flex-start;
+}
 .cv-left-part, .cv-right-part {
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 gap: 10px;
-margin: 1em 0;
+margin: 10px 0;
+}
+.cv-left-part {
+  width: 30%;
 }
 .cv-right-part {
 flex: 1;
 }
 .cv-right-part > * {
-  width: 62vw;
+  width: 95%;
 }
 .cv-left-part > * {
-  margin-left: 0.5vw;
-  width: 33vw;
+  margin-left: 20px;
+  width: 95%;
 }
 .CV-btn {
   display: flex;
@@ -234,13 +240,12 @@ flex: 1;
 .CV-text {
   color: var(--white);
   font-weight: 600;
-  font-size: 5vh;
+  font-size: 50px;
 }
 #CV-view {
   display: none;
   position: absolute;
   top: 0;
-  height: 120vh;
   transition: transform 0.5s, opacity 0.5s;
   transform: translate3d(0, 0, 0);
   perspective: 1px;
@@ -256,7 +261,7 @@ flex: 1;
   color: var(--white);
 }
 .bio-text, .job-block > *  {
-  font-size: 2.5vh;
+  font-size: 20px;
   font-family: 'News Cycle', sans-serif;
   color: rgb(255, 238, 218);
 }
@@ -267,17 +272,17 @@ flex: 1;
   color: rgb(255, 238, 218);
 }
 .job-block {
-  padding: 2vh;
-  margin: 2vh 1vw 2vh 1vw;
+  padding: 10px;
+  margin: 15px;
   border: 1px solid rgb(255, 238, 218);
   border-radius: 10px;
 }
 .uni-block {
   text-align: center;
-  margin: 0.5vh 0 2vh 0;
+  margin: 10px 0;
 }
 .uni-block > * {
-  font-size: 2.4vh;
+  font-size: 20px;
 }
 .course {
   font-weight: 700;
@@ -286,23 +291,23 @@ flex: 1;
   color: rgb(249, 199, 128);
   margin-bottom: 0;
 }
-h1.cv-heading {
-  margin-top: 1vh;
-}
+/* h1.cv-heading {
+  margin-top: 3em;
+} */
 h2.cv-heading {
   font-size: 2.5em;
 }
 h3.cv-heading {
   margin: 0;
   color: bisque;
-  font-size: 3vh;
+  font-size: 24px;
 }
 .job-position {
-  font-size: 3vh;
+  font-size: 24px;
   font-weight: 700;
 }
 #container-diploma {
-  margin-bottom: 3vh;
+  margin-bottom: 10px;
   padding: 5px;
 }
 .img-line {
@@ -322,7 +327,7 @@ h3.cv-heading {
 }
 /* dialog for diplomas */
 dialog {
-  position: fixed;
+  /* position: fixed; */
   opacity: 0;
   scale: 0;
   transition: all 0.5s;
@@ -339,9 +344,9 @@ dialog::backdrop {
 }
 
 .back-arrow {
-  padding: 3vh;
-  width: 7.5vw;
-  height: 7.5vw;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
   fill: rgb(249, 199, 128);
   transition: all 0.5s ease-in-out;
 }
@@ -387,7 +392,7 @@ dialog::backdrop {
 .expanded {
   margin-left: calc(-1 * var(--right-column-margin));
   top: 0;
-  width: 100vw;
+  width: 100vw !important;
   height: 101vh;
   /* transform: scale(1); */
   border-radius: 0;
@@ -406,7 +411,6 @@ dialog::backdrop {
 .projectDesc__small-text, .projectDesc__medium-text, .features-container p {
   padding: 0 5px;
   margin: 0;
-  font-size: 2vh;
   font-family: 'Playfair Display', serif;
   color: rgb(209, 209, 209);
   transition: all 0.5s ease-in-out;
@@ -430,21 +434,20 @@ dialog::backdrop {
 .server-text {
   color: var(--white);
 }
-
-.expanded:hover {
+/* .expanded:hover {
   cursor:default;
-}
+} */
 #projects-view {
   display: none;
 }
 .lang-line {
-  margin: 1vh 0 1vh 0;
+  margin: 10px 0;
   display: flex;
   align-items: center;
-  gap: 1vw;
+  gap: 10px;
 }
 .small-flag {
-  width: 2vw;
+  width: 25px;
 }
 .projectDesc-container {
   margin-top: 30px;
@@ -467,7 +470,7 @@ dialog::backdrop {
   font-weight: 400;
 }
 .linkContainer {
-  gap:3vw;
+  gap:30px;
 }
 .ExpandedCardContent {
   /* display: none; */
@@ -476,7 +479,7 @@ dialog::backdrop {
   height: 0px;
   opacity: 0;
   justify-content: center;
-  gap: 1vw;
+  gap: 20px;
   transition: all 1s ease-in-out;
 }
 .visible {
@@ -495,7 +498,6 @@ dialog::backdrop {
 .svg-project, .svg-project-white {
   fill: rgba(0, 0, 0, 0.65);
   width: 3em;
-  height: 3em;
 }
 .svg-project-white {
   fill: var(--white);
@@ -544,6 +546,7 @@ dialog::backdrop {
 /*! BOOKS  */
 .expanded.books{
   background-image: url("img/books_back.jpg");
+  background-position: center;
 }
 .books .svg-project {
   fill: var(--white);
@@ -619,7 +622,11 @@ dialog::backdrop {
 .projectDesc__small-text.world {
   font-size: 1.5em;
 }
+.projectDesc__medium-text.world {
+  font-size: 2em;
+}
 .projectDesc__big-text.world {
+  font-size: 7em;
   margin: 25px 0;
   letter-spacing: -3px;
   font-family: 'Russo One', sans-serif;
@@ -664,7 +671,6 @@ dialog::backdrop {
 .features-container.psychology, .projectLink.psychology {
   background-color: rgba(135, 179, 17, 0.7);
 }
-
 .psychology img {
   margin-right: 5px;
   height: 43px;
@@ -672,13 +678,16 @@ dialog::backdrop {
 }
 
 /*! --------------------------------------- Mobile devices --------------------------------------- */
-.social-links-mobile {
+.social-links-mobile__container {
   display: none;
 }
 
 @media screen and (max-width: 3000px) {
   #name {
     font-size: 6em;
+  }
+  .left-column {
+    padding-left: 2%;
   }
 }
 
@@ -689,91 +698,8 @@ dialog::backdrop {
   .projectDesc__medium-text {
     font-size: 18px;
   }
-  .projectDesc__medium-text.world {
-    font-size: 4vh;
-    margin: 0 0 3vh 0;
-  }
   .projectDesc__big-text {
     font-size: 52px;
-  }
-  .projectDesc__big-text.world {
-    font-size: 7em;
-  }
-
-  .text1 {
-    font-size: 2em;
-  }
-
-}
-
-@media screen and (max-width: 1450px) {
-  .left-column {
-    padding-left: 2vw;
-  }
-
-}
-/*! phones */
-/* iphone pro max */
-@media (orientation: portrait) and (max-width: 500px) {
-  .social-links-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .social-links-mobile > * {
-    background-color: var(--white);
-    font-size: 12px;
-    width: 40%;
-    height: 40px;
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid black;
-
-  }
-  .social-links-mobile > * > * {
-    color: #1D1C13;
-    fill: #1D1C13;
-    width: 35px;
-    height: 35px;
-  }
-
-  #main-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .left-column {
-    position: inherit;
-    padding-left: 0;
-    width: 100%;
-  }
-  .CV-btn, .social-links {
-    display: none;
-  }
-
-  .right-column {
-    margin-left: 0;
-  }
-  .project-card {
-    width: 90%;
-  }
-
-  #name {
-    font-size: 6em;
-  }
-  .main__subtext {
-    padding: 0 5px;
-    font-size: 3em;
-  }
-  .projectDesc__small-text {
-    font-size: 16px;
-  }
-  .projectDesc__medium-text {
-    font-size: 16px;
-  }
-  .projectDesc__big-text {
-    font-size: 40px;
   }
 }
 
@@ -808,7 +734,7 @@ dialog::backdrop {
     font-size: 50px;
   }
 }
-/* big iPad (landscape) */
+/* iPad PRO (landscape) */
 @media screen and (max-width: 1400px) and (min-width: 1200px) and (orientation: landscape){
   #name {
     font-size: 8em;
@@ -837,17 +763,26 @@ dialog::backdrop {
 }
 /* iPad Air (portrait) */
 @media screen and (max-width: 1050px) and (orientation: portrait) {
+  .right-column {
+    margin-top: 10%;
+  }
   #name {
     font-size: 6em;
   }
   .main__subtext {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .projectDesc__medium-text {
     font-size: 18px;
   }
   .projectDesc__big-text {
     font-size: 40px;
+  }
+  .appear1 .cv-heading {
+    font-size: 35px;
+  }
+  h3.cv-heading {
+    font-size: 20px;
   }
   .svg-link {
     width: 40px;
@@ -859,5 +794,124 @@ dialog::backdrop {
   .svg-CV {
     width: 60px;
     height: 60px;
+  }
+}
+
+/*! phones */
+/* iphone pro max */
+@media (orientation: portrait) and (max-width: 500px) {
+  .right-column {
+    margin-top: 0;
+  }
+  .brand-container > * {
+    text-align: center;
+  }
+  .social-links-mobile__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .social-links-mobile__container > * {
+    background-color: transparent;
+    border-width: 0;
+    font-size: 12px;
+    height: 40px;
+    padding: 5px;
+    margin: 5px 8px 25px 8px;
+  }
+  .social-links-mobile__container > * > * {
+    color: var(--white);
+    fill: var(--white);
+    width: 45px;
+    height: 45px;
+  }
+  #main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .left-column {
+    position: inherit;
+    padding-left: 0;
+    width: 100%;
+  }
+  .CV-btn, .social-links {
+    display: none;
+  }
+  .right-column {
+    margin-left: 0;
+  }
+  .project-card {
+    width: 90%;
+  }
+  .expanded {
+    margin-left: 0;
+  }
+
+  #name {
+    font-size: 5.3em;
+  }
+  .main__subtext {
+    font-size: 1.6em;
+  }
+  .ExpandedCardContent, .features-container {
+    width: 93%;
+  }
+  .projectDesc__small-text {
+    font-size: 16px;
+  }
+  .projectDesc__medium-text {
+    font-size: 16px;
+  }
+  .projectDesc__big-text {
+    font-size: 40px;
+  }
+  .projectDesc__small-text.world, .projectDesc__small-text.books, 
+  .projectDesc__small-text.stocks, .projectDesc__small-text.psychology {
+    font-size: 16px;
+  }
+  .projectDesc__medium-text.world, .projectDesc__medium-text.books,
+  .projectDesc__medium-text.stocks, .projectDesc__medium-text.psychology {
+    font-size: 16px;
+  }
+  .projectDesc__big-text.world {
+    font-size: 3.5em;
+    margin: 10px;
+  }
+  .projectDesc__big-text.psychology {
+    font-size: 3.3em;
+    margin: 15px 0;
+    height: 55px;
+    width: 235px;
+  }
+  .projectDesc__big-text.books, .projectDesc__big-text.stocks {
+    font-size: 5em;
+    margin-top: 15px;
+  }
+  .features-container p {
+    font-size: 17px;
+  }
+  .projectLink span {
+    font-size: 1em;
+  }
+  .svg-project, .svg-project-white {
+    width: 2em;
+  }
+  /* CV page */
+  .back-arrow, .appear1 {
+    display: none;
+  }
+  .cv-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .cv-left-part, .cv-right-part {
+    width: 95%;
+    margin: 0;
+  }
+  .cv-left-part > * {
+    margin-left: 0;
   }
 }

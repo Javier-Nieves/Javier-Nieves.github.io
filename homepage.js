@@ -2,14 +2,19 @@
 let goingAway;
 document.addEventListener("DOMContentLoaded", function () {
   // DOM selector
-  const CVbtn = document.querySelector(".CV-btn");
+  const CVbtns = [
+    document.querySelector(".CV-btn"),
+    document.querySelector(".CV-btn-mobile"),
+  ];
   const backBtn = document.querySelector(".back-arrow");
   const cards = document.querySelectorAll(".project-card");
   const diplomas = document.querySelectorAll(".cv-diploma");
 
   //! handlers
   // views:
-  CVbtn.addEventListener("click", () => showView("CV"));
+  CVbtns.forEach((CVbtn) =>
+    CVbtn.addEventListener("click", () => showView("CV"))
+  );
   backBtn.addEventListener("click", () => showView("main"));
 
   // back button function
@@ -100,6 +105,10 @@ function showProject(projectCard) {
     .name;
 
   if (cardIsExpanded) {
+    // scroll page to the top. Expanded project card is diaplayed there
+    window.scrollTo({
+      top: 0,
+    });
     // stop scrolling when project card is expanded
     document.querySelector("body").style.overflow = "hidden";
     // change upper text style
