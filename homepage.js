@@ -64,7 +64,6 @@ function loadCorrectView() {
 
 function showView(name) {
   let show, hide;
-
   if (name === "CV") {
     show = "CV";
     hide = "main";
@@ -90,6 +89,7 @@ function showView(name) {
   }, 500);
   appearAnimation(show === "CV");
   show === "main" && window.history.pushState("_", "_", "/");
+  show === "CV" && window.history.pushState("_", "_", "/CV");
 }
 
 function showProject(projectCard) {

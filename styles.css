@@ -839,6 +839,14 @@ dialog::backdrop {
   .CV-btn, .social-links {
     display: none;
   }
+  #diplomaModal {
+    width: 90%;
+    border-radius: 10px;
+    padding: 0;
+  }
+  .modal-img {
+    width: 100%;
+  }
   .right-column {
     margin-left: 0;
   }
