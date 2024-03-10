@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const backBtn = document.querySelector(".back-arrow");
   const cards = document.querySelectorAll(".project-card");
   const diplomas = document.querySelectorAll(".cv-diploma");
+  const leftColumn = document.querySelector(".cv-left-part");
 
   //! handlers
   // views:
@@ -48,8 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // parallax scrolling in CV view
-  window.addEventListener("scroll", handleScroll);
+  // parallax scrolling in CV view (not in phones)
+  window.screen.width > 500 &&
+    window.addEventListener("scroll", () => handleScroll(leftColumn));
 });
 
 // todo - other view?
@@ -185,9 +187,9 @@ function appearAnimation(showing) {
   }
 }
 
-function handleScroll() {
+function handleScroll(leftColumn) {
+  console.log(leftColumn);
   // const backGro = document.querySelector(".CV-background");
-  const leftColumn = document.querySelector(".cv-left-part");
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   // this coeffitients affect scrolling of two columns and their position on the page
