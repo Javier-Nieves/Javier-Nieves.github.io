@@ -1,14 +1,14 @@
 :root {
-  --title-font: 'Bebas Neue', sans-serif;
+  --title-font: "Bebas Neue", sans-serif;
   --right-column-margin: 45vw;
-  --white: #F7F6F4;
+  --white: #f7f6f4;
 }
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   background-color: rgba(42, 42, 42, 0.98);
-  background-image: url('img/back8.jpeg');
+  background-image: url("img/back8.jpeg");
   background-size: cover;
 }
 .flex-column {
@@ -32,7 +32,8 @@ a {
   padding: 10px;
   text-decoration: none;
 }
-.flex, .spinner {
+.flex,
+.spinner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +55,8 @@ a {
   gap: 30px;
   margin: 5% 0;
 }
-.left-column, .right-column {
+.left-column,
+.right-column {
   flex-direction: column;
 }
 .left-column {
@@ -103,7 +105,7 @@ a {
   font-weight: 800;
   line-height: 0.85em;
 }
-.main__subtext{
+.main__subtext {
   font-size: 3em;
   font-family: var(--title-font);
   letter-spacing: 1px;
@@ -130,7 +132,7 @@ a {
 .social-links > * {
   transition: all 0.5s ease-in-out;
 }
-.social-links > *:hover{
+.social-links > *:hover {
   text-decoration: none;
   transform: scale(1.05);
 }
@@ -144,10 +146,11 @@ a {
   width: 2.3em;
   height: 2.3em;
 }
-.link-text-white, .CV-text {
+.link-text-white,
+.CV-text {
   color: var(--white);
   font-size: 20px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   text-decoration: none;
 }
@@ -171,7 +174,7 @@ a {
 .spinner {
   display: none;
 }
-.spinner  > h2 {
+.spinner > h2 {
   font-size: 20px;
   margin-right: 10px;
 }
@@ -199,19 +202,20 @@ a {
 .cv-container {
   align-items: flex-start;
 }
-.cv-left-part, .cv-right-part {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 10px;
-margin: 10px 0;
+.cv-left-part,
+.cv-right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
 }
 .cv-left-part {
   width: 30%;
 }
 .cv-right-part {
-flex: 1;
+  flex: 1;
 }
 .cv-right-part > * {
   width: 95%;
@@ -260,12 +264,14 @@ flex: 1;
   justify-content: center;
   color: var(--white);
 }
-.bio-text, .job-block > *  {
+.bio-text,
+.job-block > * {
   font-size: 20px;
-  font-family: 'News Cycle', sans-serif;
+  font-family: "News Cycle", sans-serif;
   color: rgb(255, 238, 218);
 }
-.job-block, .uni-block {
+.job-block,
+.uni-block {
   display: flex;
   flex-direction: column;
   color: var(--white);
@@ -314,7 +320,7 @@ h3.cv-heading {
   flex-wrap: wrap;
   gap: 5px;
 }
-.cv-diploma{
+.cv-diploma {
   width: 48%;
   height: 100%;
 }
@@ -355,16 +361,20 @@ dialog::backdrop {
   transform: scale(1.03);
   box-shadow: 0 0 0 3px var(--white);
 }
-.appear1, .appear2, .appear3, .appear4, .appear5 {
+.appear1,
+.appear2,
+.appear3,
+.appear4,
+.appear5 {
   height: auto;
   transition: all 1.2s;
   padding: 0;
   opacity: 0;
-  transform:translateY(100px);
+  transform: translateY(100px);
 }
 .visible-cv {
   opacity: 1;
-  transform:translateY(0px);
+  transform: translateY(0px);
   padding: 10px;
 }
 
@@ -408,10 +418,12 @@ dialog::backdrop {
 .projectDesc__big-text {
   margin: 20px 0 15px 0;
 }
-.projectDesc__small-text, .projectDesc__medium-text, .features-container p {
+.projectDesc__small-text,
+.projectDesc__medium-text,
+.features-container p {
   padding: 0 5px;
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: rgb(209, 209, 209);
   transition: all 0.5s ease-in-out;
   text-align: center;
@@ -466,11 +478,11 @@ dialog::backdrop {
 }
 .projectLink span {
   font-size: 1.5em;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
 }
 .linkContainer {
-  gap:30px;
+  gap: 30px;
 }
 .ExpandedCardContent {
   /* display: none; */
@@ -493,9 +505,10 @@ dialog::backdrop {
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
-.svg-project, .svg-project-white {
+.svg-project,
+.svg-project-white {
   fill: rgba(0, 0, 0, 0.65);
   width: 3em;
 }
@@ -527,37 +540,45 @@ dialog::backdrop {
   animation: shimmer 1s infinite alternate;
 }
 @keyframes shimmer {
-  1%, 18%, 22%, 25%, 53%, 57%, 99% {
-    text-shadow:
-      0 0 3px #fff,
-      0 0 13px #fff,
-      0 0 30px rgba(255, 247, 0, 0.862),
+  1%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  99% {
+    text-shadow: 0 0 3px #fff, 0 0 13px #fff, 0 0 30px rgba(255, 247, 0, 0.862),
       0 0 50px rgb(193, 207, 0);
-    box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.3),
-    0 0 35px rgba(242, 255, 0, 0.2)
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 35px rgba(242, 255, 0, 0.2);
   }
-  0%, 20%, 24%, 55%, 100% {       
+  0%,
+  20%,
+  24%,
+  55%,
+  100% {
     text-shadow: none;
     box-shadow: none;
   }
 }
 
 /*! BOOKS  */
-.expanded.books{
+.expanded.books {
   background-image: url("img/books_back.jpg");
   background-position: center;
 }
 .books .svg-project {
   fill: var(--white);
 }
-.projectDesc__big-text.books, .projectDesc__small-text.books, 
-.projectDesc__medium-text.books, .books p {
+.projectDesc__big-text.books,
+.projectDesc__small-text.books,
+.projectDesc__medium-text.books,
+.books p {
   color: var(--white);
 }
 .projectDesc__big-text.books {
   letter-spacing: -3px;
-  font-family: 'Tangerine', cursive;
+  font-family: "Tangerine", cursive;
   font-size: 11em;
   font-weight: 700;
   margin-right: 30px;
@@ -568,7 +589,8 @@ dialog::backdrop {
 .projectDesc__small-text.books {
   font-size: 1.5em;
 }
-.features-container.books, .projectLink.books {
+.features-container.books,
+.projectLink.books {
   background-color: rgba(23, 15, 9, 0.9);
   color: var(--white);
 }
@@ -580,10 +602,13 @@ dialog::backdrop {
 .projectDesc-container {
   margin-bottom: 20px;
 }
-.projectLink.stocks, .features-container.stocks {
+.projectLink.stocks,
+.features-container.stocks {
   background-color: rgba(182, 138, 16, 0.9);
 }
-.projectDesc__big-text.stocks, .projectDesc__small-text.stocks, .projectDesc__medium-text.stocks {
+.projectDesc__big-text.stocks,
+.projectDesc__small-text.stocks,
+.projectDesc__medium-text.stocks {
   -webkit-text-stroke: 1px var(--white);
   -webkit-text-fill-color: rgb(203, 167, 21);
 }
@@ -609,15 +634,17 @@ dialog::backdrop {
 }
 
 /*! WORLD */
-.expanded.world{
+.expanded.world {
   background-image: url("img/world_back.jpg");
 }
 .projectLink.world {
   background-color: rgba(221, 219, 219, 0.9);
 }
-.projectDesc__big-text.world, .projectDesc__small-text.world, 
-.projectDesc__medium-text.world, .world p {
-  color: #1D1C13;
+.projectDesc__big-text.world,
+.projectDesc__small-text.world,
+.projectDesc__medium-text.world,
+.world p {
+  color: #1d1c13;
 }
 .projectDesc__small-text.world {
   font-size: 1.5em;
@@ -629,21 +656,21 @@ dialog::backdrop {
   font-size: 7em;
   margin: 25px 0;
   letter-spacing: -3px;
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
 }
 .features-container.world {
   background-color: rgba(221, 219, 219, 0.9);
 }
 
-
 /*! PSYCHOLOGY */
-.expanded.psychology{
+.expanded.psychology {
   background-image: url("img/psycho_back.jpeg");
 }
 .projectLink.psychology {
   background-color: rgba(221, 219, 219, 0.9);
 }
-.projectDesc__big-text.psychology, .projectDesc__small-text.psychology, 
+.projectDesc__big-text.psychology,
+.projectDesc__small-text.psychology,
 .projectDesc__medium-text.psychology {
   color: rgb(56, 99, 26);
 }
@@ -663,12 +690,13 @@ dialog::backdrop {
   -webkit-text-fill-color: transparent;
   margin: 25px 0;
   letter-spacing: -3px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-size: 7em;
   height: 120px;
 }
-.features-container.psychology, .projectLink.psychology {
+.features-container.psychology,
+.projectLink.psychology {
   background-color: rgba(135, 179, 17, 0.7);
 }
 .psychology img {
@@ -705,12 +733,12 @@ dialog::backdrop {
 
 /*! Tablets */
 /* small iPad (landscape)*/
-@media screen and (max-width: 1050px) and (orientation: landscape){
+@media screen and (max-width: 1050px) and (orientation: landscape) {
   #name {
     font-size: 6em;
   }
   .projectDesc__small-text {
-    font-size: 13px;
+    font-size: 15px;
   }
   .projectDesc__medium-text {
     font-size: 15px;
@@ -720,7 +748,7 @@ dialog::backdrop {
   }
 }
 /* normal iPad (landscape) */
-@media screen and (max-width: 1200px) and (min-width: 1050px) and (orientation: landscape){
+@media screen and (max-width: 1200px) and (min-width: 1050px) and (orientation: landscape) {
   #name {
     font-size: 7em;
   }
@@ -735,7 +763,7 @@ dialog::backdrop {
   }
 }
 /* iPad PRO (landscape) */
-@media screen and (max-width: 1400px) and (min-width: 1200px) and (orientation: landscape){
+@media screen and (max-width: 1400px) and (min-width: 1200px) and (orientation: landscape) {
   #name {
     font-size: 8em;
   }
@@ -836,7 +864,8 @@ dialog::backdrop {
     padding-left: 0;
     width: 100%;
   }
-  .CV-btn, .social-links {
+  .CV-btn,
+  .social-links {
     display: none;
   }
   /* .CV-background {
@@ -866,7 +895,8 @@ dialog::backdrop {
   .main__subtext {
     font-size: 1.6em;
   }
-  .ExpandedCardContent, .features-container {
+  .ExpandedCardContent,
+  .features-container {
     width: 93%;
   }
   .projectDesc__small-text {
@@ -878,12 +908,16 @@ dialog::backdrop {
   .projectDesc__big-text {
     font-size: 40px;
   }
-  .projectDesc__small-text.world, .projectDesc__small-text.books, 
-  .projectDesc__small-text.stocks, .projectDesc__small-text.psychology {
+  .projectDesc__small-text.world,
+  .projectDesc__small-text.books,
+  .projectDesc__small-text.stocks,
+  .projectDesc__small-text.psychology {
     font-size: 16px;
   }
-  .projectDesc__medium-text.world, .projectDesc__medium-text.books,
-  .projectDesc__medium-text.stocks, .projectDesc__medium-text.psychology {
+  .projectDesc__medium-text.world,
+  .projectDesc__medium-text.books,
+  .projectDesc__medium-text.stocks,
+  .projectDesc__medium-text.psychology {
     font-size: 16px;
   }
   .projectDesc__big-text.world {
@@ -896,7 +930,8 @@ dialog::backdrop {
     height: 55px;
     width: 235px;
   }
-  .projectDesc__big-text.books, .projectDesc__big-text.stocks {
+  .projectDesc__big-text.books,
+  .projectDesc__big-text.stocks {
     font-size: 5em;
     margin-top: 15px;
   }
@@ -906,11 +941,13 @@ dialog::backdrop {
   .projectLink span {
     font-size: 1em;
   }
-  .svg-project, .svg-project-white {
+  .svg-project,
+  .svg-project-white {
     width: 2em;
   }
   /* CV page */
-  .back-arrow, .appear1 {
+  .back-arrow,
+  .appear1 {
     display: none;
   }
   .cv-container {
@@ -918,7 +955,8 @@ dialog::backdrop {
     align-items: center;
     margin-top: 10px;
   }
-  .cv-left-part, .cv-right-part {
+  .cv-left-part,
+  .cv-right-part {
     width: 95%;
     margin: 0;
   }
